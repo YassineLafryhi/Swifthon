@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Open {
+public class Open {
     private var fileHandle: FileHandle?
     private let filePath: String
     private let fileMode: String

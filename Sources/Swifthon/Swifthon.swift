@@ -5,4 +5,12 @@
 //  Created by Yassine Lafryhi on 29/6/2024.
 //
 
-class Swifthon {}
+public enum Swifthon {
+    typealias os = OS
+    typealias json = Json
+    typealias requests = Requests
+
+    public static func open(_ path: String, _ mode: String) -> Open? {
+        Open(path, mode)
+    }
+}
