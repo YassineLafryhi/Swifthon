@@ -6,10 +6,11 @@
 //
 
 public enum Swifthon {
-    typealias os = OS
-    typealias json = Json
-    typealias requests = Requests
-    typealias datetime = DateTime
+    public typealias os = OS
+    public typealias json = Json
+    public typealias requests = Requests
+    public typealias datetime = DateTime
+    public typealias math = Math
 
     public static func open(_ path: String, _ mode: String) -> Open? {
         Open(path, mode)

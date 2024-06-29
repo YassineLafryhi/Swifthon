@@ -69,4 +69,12 @@ final class SwifthonTests: XCTestCase {
         let formatted = now.strftime("dd-MM-yyyy HH:mm:ss")
         print(formatted)
     }
+
+    func testMath() async throws {
+        print("Value of pi: \(Swifthon.math.pi)")
+        print("Value of e: \(Swifthon.math.e)")
+
+        print("Square root of 25: \(Swifthon.math.sqrt(25))")
+        print("Factorial of 3: \(Swifthon.math.factorial(3))")
+    }
 }
