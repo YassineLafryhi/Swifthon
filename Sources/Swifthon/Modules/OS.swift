@@ -8,12 +8,12 @@
 import Foundation
 
 public enum OS {
-    static var cwd: String {
+    public static var cwd: String {
         get { FileManager.default.currentDirectoryPath }
         set { FileManager.default.changeCurrentDirectoryPath(newValue) }
     }
 
-    static func listdir(_ path: String? = nil) -> [String] {
+    public static func listdir(_ path: String? = nil) -> [String] {
         let path = path ?? FileManager.default.currentDirectoryPath
         do {
             return try FileManager.default.contentsOfDirectory(atPath: path)
@@ -23,29 +23,29 @@ public enum OS {
         }
     }
 
-    static func getenv(_ name: String) -> String? {
+    public static func getenv(_ name: String) -> String? {
         ProcessInfo.processInfo.environment[name]
     }
 
-    static func setenv(_ name: String, value: String) {
+    public static func setenv(_ name: String, value: String) {
         Darwin.setenv(name, value, 1)
     }
 
-    static func unsetenv(_ name: String) {
+    public static func unsetenv(_ name: String) {
         Darwin.unsetenv(name)
     }
 
-    static func getlogin() -> String {
+    public static func getlogin() -> String {
         let homeDirectory = NSHomeDirectory()
         let userName = homeDirectory.components(separatedBy: "/").last!
         return userName
     }
 
-    static var pid: Int {
+    public static var pid: Int {
         Int(ProcessInfo.processInfo.processIdentifier)
     }
 
-    static func mkdir(_ path: String) {
+    public static func mkdir(_ path: String) {
         do {
             try FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: false, attributes: nil)
         } catch {
@@ -53,7 +53,7 @@ public enum OS {
         }
     }
 
-    static func rename(_ oldPath: String, _ newPath: String) {
+    public static func rename(_ oldPath: String, _ newPath: String) {
         do {
             try FileManager.default.moveItem(atPath: oldPath, toPath: newPath)
         } catch {
@@ -61,7 +61,7 @@ public enum OS {
         }
     }
 
-    static func remove(_ path: String) {
+    public static func remove(_ path: String) {
         do {
             try FileManager.default.removeItem(atPath: path)
         } catch {

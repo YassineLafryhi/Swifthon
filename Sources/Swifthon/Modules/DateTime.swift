@@ -8,7 +8,7 @@
 import Foundation
 
 public enum DateTime {
-    static func now() -> Date {
+    public static func now() -> Date {
         Date()
     }
 }

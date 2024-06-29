@@ -62,13 +62,13 @@ public class Open {
         }
     }
 
-    func write(_ content: String) {
+    public func write(_ content: String) {
         if let data = content.data(using: .utf8) {
             fileHandle?.write(data)
         }
     }
 
-    func read() -> String {
+    public func read() -> String {
         guard fileMode == "r" else {
             print("File not opened in read mode")
             return ""
@@ -80,7 +80,7 @@ public class Open {
         return ""
     }
 
-    func close() {
+    public func close() {
         fileHandle?.closeFile()
     }
 }
