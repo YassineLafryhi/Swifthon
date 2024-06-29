@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum OS {
+public enum OS {
     static var cwd: String {
         get { FileManager.default.currentDirectoryPath }
         set { FileManager.default.changeCurrentDirectoryPath(newValue) }

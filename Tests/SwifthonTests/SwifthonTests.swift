@@ -63,4 +63,10 @@ final class SwifthonTests: XCTestCase {
 
         print("Current Process ID: \(Swifthon.os.pid)")
     }
+
+    func testDateTime() async throws {
+        let now = Swifthon.datetime.now()
+        let formatted = now.strftime("dd-MM-yyyy HH:mm:ss")
+        print(formatted)
+    }
 }

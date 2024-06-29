@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Requests {
+public enum Requests {
     static func get(_ urlString: String) async throws -> Data {
         guard let url = URL(string: urlString) else {
             throw URLError(.badURL)
