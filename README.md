@@ -23,6 +23,7 @@ Add the following dependency to your `Package.swift` file:
 ### Write/Read Files (open, write, read, close)
 
 ```swift
+import Foundation
 import Swifthon
 
 let user = Swifthon.os.getlogin()
@@ -41,6 +42,9 @@ f.close()
 ### Send HTTP GET request and parse JSON (requests, json)
 
 ```swift
+import Foundation
+import Swifthon
+
 let data = try await Swifthon.requests.get("https://jsonplaceholder.typicode.com/todos")
 let json = try Swifthon.json.loads(data)
 for item in json {
@@ -51,6 +55,9 @@ for item in json {
 ### Get current date and time (datetime)
 
 ```swift
+import Foundation
+import Swifthon
+
 let now = Swifthon.datetime.now()
 let formatted = now.strftime("dd-MM-yyyy HH:mm:ss")
 print(formatted)
@@ -59,6 +66,9 @@ print(formatted)
 ### Some Math functions (math)
 
 ```swift
+import Foundation
+import Swifthon
+
 print("Value of pi: \(Swifthon.math.pi)")
 print("Value of e: \(Swifthon.math.e)")
 
